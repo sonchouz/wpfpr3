@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpfpr3", "wpfpr3\wpfpr3.csproj", "{453AD57C-0067-40AE-9BAF-C9921B4400BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{453AD57C-0067-40AE-9BAF-C9921B4400BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453AD57C-0067-40AE-9BAF-C9921B4400BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453AD57C-0067-40AE-9BAF-C9921B4400BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453AD57C-0067-40AE-9BAF-C9921B4400BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76C1A6D1-FA33-41ED-A0CB-435FE6CB1631}
+	EndGlobalSection
+EndGlobal
