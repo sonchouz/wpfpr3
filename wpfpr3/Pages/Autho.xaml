@@ -21,7 +21,8 @@
             <TextBlock Text="Пароль: "/>
             <PasswordBox x:Name="pswbPassword"/>
             <TextBlock Visibility="Hidden" x:Name="txtBlockCaptcha" Text="Капча:"/>
-            <TextBlock Visibility="Hidden" x:Name="txtbCaptcha"/>
+            <TextBox  x:Name="txtbCaptcha"/>
+            
             <TextBlock HorizontalAlignment="Center" Visibility="Hidden" x:Name="txtBlockTimer"/>
 
             <StackPanel Orientation="Horizontal" Height="80" HorizontalAlignment="Center">

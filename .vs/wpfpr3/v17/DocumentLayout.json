@@ -1,0 +1,165 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|c:\\users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\services\\hash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\services\\hash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|c:\\users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\services\\captchagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\services\\captchagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\pages\\autho.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\pages\\autho.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|c:\\users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\pages\\autho.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\pages\\autho.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\pages\\client.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\pages\\client.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Autho.xaml",
+              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Pages\\Autho.xaml",
+              "RelativeDocumentMoniker": "wpfpr3\\Pages\\Autho.xaml",
+              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Pages\\Autho.xaml",
+              "RelativeToolTip": "wpfpr3\\Pages\\Autho.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-27T06:39:54.909Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Hash.cs",
+              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Services\\Hash.cs",
+              "RelativeDocumentMoniker": "wpfpr3\\Services\\Hash.cs",
+              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Services\\Hash.cs",
+              "RelativeToolTip": "wpfpr3\\Services\\Hash.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:48:35.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CaptchaGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Services\\CaptchaGenerator.cs",
+              "RelativeDocumentMoniker": "wpfpr3\\Services\\CaptchaGenerator.cs",
+              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Services\\CaptchaGenerator.cs*",
+              "RelativeToolTip": "wpfpr3\\Services\\CaptchaGenerator.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T05:48:21.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Autho.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Pages\\Autho.xaml.cs",
+              "RelativeDocumentMoniker": "wpfpr3\\Pages\\Autho.xaml.cs",
+              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Pages\\Autho.xaml.cs",
+              "RelativeToolTip": "wpfpr3\\Pages\\Autho.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T06:44:14.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\App.xaml",
+              "RelativeDocumentMoniker": "wpfpr3\\App.xaml",
+              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\App.xaml",
+              "RelativeToolTip": "wpfpr3\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-27T06:26:20.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Client.xaml",
+              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Pages\\Client.xaml",
+              "RelativeDocumentMoniker": "wpfpr3\\Pages\\Client.xaml",
+              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Pages\\Client.xaml",
+              "RelativeToolTip": "wpfpr3\\Pages\\Client.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-27T05:48:53.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Windows\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "wpfpr3\\Windows\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Windows\\MainWindow.xaml",
+              "RelativeToolTip": "wpfpr3\\Windows\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-24T09:58:50.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Windows\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "wpfpr3\\Windows\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Windows\\MainWindow.xaml.cs",
+              "RelativeToolTip": "wpfpr3\\Windows\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T09:58:48.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

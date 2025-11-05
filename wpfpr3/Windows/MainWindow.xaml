@@ -21,4 +21,5 @@
         </Grid>
         <Frame x:Name="FrmMain" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="FrmMain_ContentRendered" Grid.ColumnSpan="2"/>
     </Grid>
+    
 </Window>

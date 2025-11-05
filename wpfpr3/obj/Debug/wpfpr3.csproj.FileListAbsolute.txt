@@ -18,3 +18,4 @@ C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Autho.g.cs
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Windows\MainWindow.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Autho.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Client.baml
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.exe.config
