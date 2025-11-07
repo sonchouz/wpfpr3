@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CadrAgencyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="candidateID" Type="Int32" Nullable="false" />
+    <Property Name="employerID" Type="Int32" Nullable="false" />
+    <Property Name="appdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="appstatusID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Appstatus" Relationship="Self.FK__Applicati__appst__52593CB8" FromRole="Applications" ToRole="Appstatuses" />
+    <NavigationProperty Name="Candidate" Relationship="Self.FK_Applications_Candidate" FromRole="Applications" ToRole="Candidate" />
+    <NavigationProperty Name="Employer" Relationship="Self.FK_Applications_Employer" FromRole="Applications" ToRole="Employer" />
+  </EntityType>
+  <EntityType Name="Appstatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="statustype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__appst__52593CB8" FromRole="Appstatuses" ToRole="Applications" />
+  </EntityType>
+  <EntityType Name="Candidate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="citizenship" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="statusID" Type="Int32" Nullable="false" />
+    <Property Name="livingcity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="educationID" Type="Int32" Nullable="false" />
+    <Property Name="langID" Type="Int32" />
+    <Property Name="levelID" Type="Int32" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK_Applications_Candidate" FromRole="Candidate" ToRole="Applications" />
+    <NavigationProperty Name="Education" Relationship="Self.FK_Candidate_Education" FromRole="Candidate" ToRole="Education" />
+    <NavigationProperty Name="Language" Relationship="Self.FK_Candidate_Languages" FromRole="Candidate" ToRole="Languages" />
+    <NavigationProperty Name="Level" Relationship="Self.FK_Candidate_Levels" FromRole="Candidate" ToRole="Levels" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_Candidate_Statuses" FromRole="Candidate" ToRole="Statuses" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Candidate_User" FromRole="Candidate" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="edulevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Candidates" Relationship="Self.FK_Candidate_Education" FromRole="Education" ToRole="Candidate" />
+  </EntityType>
+  <EntityType Name="Employer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="companyname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="estdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK_Applications_Employer" FromRole="Employer" ToRole="Applications" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Employer_User" FromRole="Employer" ToRole="User" />
+    <NavigationProperty Name="Resumes" Relationship="Self.FK_Resumes_Employer" FromRole="Employer" ToRole="Resumes" />
+    <NavigationProperty Name="Vacancies" Relationship="Self.FK_Vacancies_Employer" FromRole="Employer" ToRole="Vacancies" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="lang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Candidates" Relationship="Self.FK_Candidate_Languages" FromRole="Languages" ToRole="Candidate" />
+  </EntityType>
+  <EntityType Name="Level">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="levelname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Candidates" Relationship="Self.FK_Candidate_Levels" FromRole="Levels" ToRole="Candidate" />
+  </EntityType>
+  <EntityType Name="Network">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="network1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_Networks" FromRole="Networks" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Resume">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vacancieID" Type="Int32" Nullable="false" />
+    <Property Name="candidateID" Type="Int32" Nullable="false" />
+    <Property Name="employerID" Type="Int32" Nullable="false" />
+    <Property Name="publicationdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="looks" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employer" Relationship="Self.FK_Resumes_Employer" FromRole="Resumes" ToRole="Employer" />
+    <NavigationProperty Name="Vacancy" Relationship="Self.FK__Resumes__vacanci__5AEE82B9" FromRole="Resumes" ToRole="Vacancies" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roletype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_Roles" FromRole="Roles" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="skill1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Vacancies" Relationship="Self.FK__Vacancies__skill__5DCAEF64" FromRole="Skills" ToRole="Vacancies" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="statustype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Candidates" Relationship="Self.FK_Candidate_Statuses" FromRole="Statuses" ToRole="Candidate" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roleID" Type="Int32" Nullable="false" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hashpass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="networkID" Type="Int32" />
+    <NavigationProperty Name="Candidate" Relationship="Self.FK_Candidate_User" FromRole="User" ToRole="Candidate" />
+    <NavigationProperty Name="Employer" Relationship="Self.FK_Employer_User" FromRole="User" ToRole="Employer" />
+    <NavigationProperty Name="Network" Relationship="Self.FK_User_Networks" FromRole="User" ToRole="Networks" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_User_Roles" FromRole="User" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Vacancy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vacancie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="describing" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="salary" Type="Int32" Nullable="false" />
+    <Property Name="skillID" Type="Int32" Nullable="false" />
+    <Property Name="statusID" Type="Int32" Nullable="false" />
+    <Property Name="employerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Employer" Relationship="Self.FK_Vacancies_Employer" FromRole="Vacancies" ToRole="Employer" />
+    <NavigationProperty Name="Resumes" Relationship="Self.FK__Resumes__vacanci__5AEE82B9" FromRole="Vacancies" ToRole="Resumes" />
+    <NavigationProperty Name="Skill" Relationship="Self.FK__Vacancies__skill__5DCAEF64" FromRole="Vacancies" ToRole="Skills" />
+    <NavigationProperty Name="Vacanciestatu" Relationship="Self.FK__Vacancies__statu__5EBF139D" FromRole="Vacancies" ToRole="Vacanciestatus" />
+  </EntityType>
+  <EntityType Name="Vacanciestatu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="statustype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Vacancies" Relationship="Self.FK__Vacancies__statu__5EBF139D" FromRole="Vacanciestatus" ToRole="Vacancies" />
+  </EntityType>
+  <Association Name="FK__Applicati__appst__52593CB8">
+    <End Role="Appstatuses" Type="Self.Appstatus" Multiplicity="1" />
+    <End Role="Applications" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appstatuses">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Applications">
+        <PropertyRef Name="appstatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_Candidate">
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="1" />
+    <End Role="Applications" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidate">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Applications">
+        <PropertyRef Name="candidateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_Employer">
+    <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
+    <End Role="Applications" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Applications">
+        <PropertyRef Name="employerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidate_Education">
+    <End Role="Education" Type="Self.Education" Multiplicity="1" />
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Education">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Candidate">
+        <PropertyRef Name="educationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidate_Languages">
+    <End Role="Languages" Type="Self.Language" Multiplicity="0..1" />
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Candidate">
+        <PropertyRef Name="langID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidate_Levels">
+    <End Role="Levels" Type="Self.Level" Multiplicity="0..1" />
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Levels">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Candidate">
+        <PropertyRef Name="levelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidate_Statuses">
+    <End Role="Statuses" Type="Self.Status" Multiplicity="1" />
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Statuses">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Candidate">
+        <PropertyRef Name="statusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidate_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Candidate">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employer_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Employer" Type="Self.Employer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Employer">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resumes_Employer">
+    <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
+    <End Role="Resumes" Type="Self.Resume" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Resumes">
+        <PropertyRef Name="employerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vacancies_Employer">
+    <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
+    <End Role="Vacancies" Type="Self.Vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employer">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vacancies">
+        <PropertyRef Name="employerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Networks">
+    <End Role="Networks" Type="Self.Network" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Networks">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="networkID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Resumes__vacanci__5AEE82B9">
+    <End Role="Vacancies" Type="Self.Vacancy" Multiplicity="1" />
+    <End Role="Resumes" Type="Self.Resume" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vacancies">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Resumes">
+        <PropertyRef Name="vacancieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Roles">
+    <End Role="Roles" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="roleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vacancies__skill__5DCAEF64">
+    <End Role="Skills" Type="Self.Skill" Multiplicity="1" />
+    <End Role="Vacancies" Type="Self.Vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vacancies">
+        <PropertyRef Name="skillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vacancies__statu__5EBF139D">
+    <End Role="Vacanciestatus" Type="Self.Vacanciestatu" Multiplicity="1" />
+    <End Role="Vacancies" Type="Self.Vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vacanciestatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vacancies">
+        <PropertyRef Name="statusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CadrAgencyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Applications" EntityType="Self.Application" />
+    <EntitySet Name="Appstatuses" EntityType="Self.Appstatus" />
+    <EntitySet Name="Candidates" EntityType="Self.Candidate" />
+    <EntitySet Name="Educations" EntityType="Self.Education" />
+    <EntitySet Name="Employers" EntityType="Self.Employer" />
+    <EntitySet Name="Languages" EntityType="Self.Language" />
+    <EntitySet Name="Levels" EntityType="Self.Level" />
+    <EntitySet Name="Networks" EntityType="Self.Network" />
+    <EntitySet Name="Resumes" EntityType="Self.Resume" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Skills" EntityType="Self.Skill" />
+    <EntitySet Name="Statuses" EntityType="Self.Status" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Vacancies" EntityType="Self.Vacancy" />
+    <EntitySet Name="Vacanciestatus" EntityType="Self.Vacanciestatu" />
+    <AssociationSet Name="FK__Applicati__appst__52593CB8" Association="Self.FK__Applicati__appst__52593CB8">
+      <End Role="Appstatuses" EntitySet="Appstatuses" />
+      <End Role="Applications" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_Candidate" Association="Self.FK_Applications_Candidate">
+      <End Role="Candidate" EntitySet="Candidates" />
+      <End Role="Applications" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_Employer" Association="Self.FK_Applications_Employer">
+      <End Role="Employer" EntitySet="Employers" />
+      <End Role="Applications" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidate_Education" Association="Self.FK_Candidate_Education">
+      <End Role="Education" EntitySet="Educations" />
+      <End Role="Candidate" EntitySet="Candidates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidate_Languages" Association="Self.FK_Candidate_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Candidate" EntitySet="Candidates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidate_Levels" Association="Self.FK_Candidate_Levels">
+      <End Role="Levels" EntitySet="Levels" />
+      <End Role="Candidate" EntitySet="Candidates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidate_Statuses" Association="Self.FK_Candidate_Statuses">
+      <End Role="Statuses" EntitySet="Statuses" />
+      <End Role="Candidate" EntitySet="Candidates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidate_User" Association="Self.FK_Candidate_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Candidate" EntitySet="Candidates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employer_User" Association="Self.FK_Employer_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Employer" EntitySet="Employers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resumes_Employer" Association="Self.FK_Resumes_Employer">
+      <End Role="Employer" EntitySet="Employers" />
+      <End Role="Resumes" EntitySet="Resumes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vacancies_Employer" Association="Self.FK_Vacancies_Employer">
+      <End Role="Employer" EntitySet="Employers" />
+      <End Role="Vacancies" EntitySet="Vacancies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Networks" Association="Self.FK_User_Networks">
+      <End Role="Networks" EntitySet="Networks" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Resumes__vacanci__5AEE82B9" Association="Self.FK__Resumes__vacanci__5AEE82B9">
+      <End Role="Vacancies" EntitySet="Vacancies" />
+      <End Role="Resumes" EntitySet="Resumes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Roles" Association="Self.FK_User_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vacancies__skill__5DCAEF64" Association="Self.FK__Vacancies__skill__5DCAEF64">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="Vacancies" EntitySet="Vacancies" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vacancies__statu__5EBF139D" Association="Self.FK__Vacancies__statu__5EBF139D">
+      <End Role="Vacanciestatus" EntitySet="Vacanciestatus" />
+      <End Role="Vacancies" EntitySet="Vacancies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

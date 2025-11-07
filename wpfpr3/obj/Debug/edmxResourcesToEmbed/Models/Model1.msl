@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище CadrAgencyModelContainer" CdmEntityContainer="CadrAgencyEntities">
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Application">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="candidateID" ColumnName="candidateID" />
+          <ScalarProperty Name="employerID" ColumnName="employerID" />
+          <ScalarProperty Name="appdate" ColumnName="appdate" />
+          <ScalarProperty Name="appstatusID" ColumnName="appstatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Appstatuses">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Appstatus">
+        <MappingFragment StoreEntitySet="Appstatuses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="statustype" ColumnName="statustype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Candidates">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Candidate">
+        <MappingFragment StoreEntitySet="Candidate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="citizenship" ColumnName="citizenship" />
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="livingcity" ColumnName="livingcity" />
+          <ScalarProperty Name="educationID" ColumnName="educationID" />
+          <ScalarProperty Name="langID" ColumnName="langID" />
+          <ScalarProperty Name="levelID" ColumnName="levelID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Educations">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Education">
+        <MappingFragment StoreEntitySet="Education">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="edulevel" ColumnName="edulevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employers">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Employer">
+        <MappingFragment StoreEntitySet="Employer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="estdate" ColumnName="estdate" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Language">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Levels">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Level">
+        <MappingFragment StoreEntitySet="Levels">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="levelname" ColumnName="levelname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Networks">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Network">
+        <MappingFragment StoreEntitySet="Networks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="network1" ColumnName="network" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resumes">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Resume">
+        <MappingFragment StoreEntitySet="Resumes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vacancieID" ColumnName="vacancieID" />
+          <ScalarProperty Name="candidateID" ColumnName="candidateID" />
+          <ScalarProperty Name="employerID" ColumnName="employerID" />
+          <ScalarProperty Name="publicationdate" ColumnName="publicationdate" />
+          <ScalarProperty Name="looks" ColumnName="looks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="roletype" ColumnName="roletype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Skill">
+        <MappingFragment StoreEntitySet="Skills">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="skill1" ColumnName="skill" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Statuses">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Status">
+        <MappingFragment StoreEntitySet="Statuses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="statustype" ColumnName="statustype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CadrAgencyModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CadrAgencyModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="hashpass" ColumnName="hashpass" />
+          <ScalarProperty Name="networkID" ColumnName="networkID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacancies">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Vacancy">
+        <MappingFragment StoreEntitySet="Vacancies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vacancie" ColumnName="vacancie" />
+          <ScalarProperty Name="describing" ColumnName="describing" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="skillID" ColumnName="skillID" />
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="employerID" ColumnName="employerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacanciestatus">
+      <EntityTypeMapping TypeName="CadrAgencyModel.Vacanciestatu">
+        <MappingFragment StoreEntitySet="Vacanciestatus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="statustype" ColumnName="statustype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

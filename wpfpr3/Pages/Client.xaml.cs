@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpfpr3.Models;
 
 namespace wpfpr3.Pages
 {
@@ -20,7 +21,7 @@ namespace wpfpr3.Pages
     /// </summary>
     public partial class Client : Page
     {
-        public Client()
+        public Client(User user, string role)
         {
             InitializeComponent();
         }

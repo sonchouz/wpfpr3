@@ -19,9 +19,9 @@
             <TextBlock Text="Логин: "/>
             <TextBox x:Name="txtbLogin"/>
             <TextBlock Text="Пароль: "/>
-            <PasswordBox x:Name="pswbPassword"/>
+            <TextBox x:Name="txtbPassword"/>
             <TextBlock Visibility="Hidden" x:Name="txtBlockCaptcha" Text="Капча:"/>
-            <TextBox  x:Name="txtbCaptcha"/>
+            <TextBox Visibility="Hidden" x:Name="txtbCaptcha"/>
             
             <TextBlock HorizontalAlignment="Center" Visibility="Hidden" x:Name="txtBlockTimer"/>
 

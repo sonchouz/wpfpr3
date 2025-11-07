@@ -18,4 +18,10 @@ C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Autho.g.cs
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Windows\MainWindow.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Autho.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Client.baml
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\bin\Debug\EntityFramework.dll
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\bin\Debug\EntityFramework.xml
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3_Content.g.cs
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.csproj.Up2Date
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.exe.config

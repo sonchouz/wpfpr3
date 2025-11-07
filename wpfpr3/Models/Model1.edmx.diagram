@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="293201efcaf04c06bf064b6f536bd5c5" Name="Diagram1">
+        <EntityTypeShape EntityType="CadrAgencyModel.Application" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Appstatus" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Candidate" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Education" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Employer" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Language" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Level" Width="1.5" PointX="1.875" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Network" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Resume" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Role" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Skill" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Status" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.User" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Vacancy" Width="1.5" PointX="10.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadrAgencyModel.Vacanciestatu" Width="1.5" PointX="8.25" PointY="16.375" IsExpanded="true" />
+        <AssociationConnector Association="CadrAgencyModel.FK__Applicati__appst__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Applications_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Applications_Employer" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Candidate_Education" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Candidate_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Candidate_Levels" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Candidate_Statuses" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Candidate_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Employer_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Resumes_Employer" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_Vacancies_Employer" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_User_Networks" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK__Resumes__vacanci__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK_User_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK__Vacancies__skill__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="CadrAgencyModel.FK__Vacancies__statu__5EBF139D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
