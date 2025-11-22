@@ -24,4 +24,6 @@ C:\Users\nikon\source\repos\wpfpr3\wpfpr3\bin\Debug\EntityFramework.xml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3_Content.g.cs
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.csproj.Up2Date
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Employer.g.cs
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Employer.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.exe.config
