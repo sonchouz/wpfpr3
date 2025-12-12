@@ -100,8 +100,14 @@ namespace wpfpr3.Pages
             {
                 if (user != null)
                 {
+                    if (!CanAccessSystem(DateTime.Now))
+                    {
+                        MessageBox.Show("Доступ к системе запрещён. Рабочее время с 10:00 до 19:00.");
+                        return;
+                    }
                     role = GetRole(user);
-                    MessageBox.Show("Вы вошли под: " + role.ToString());
+                    string greeting = GetGreeting(user, DateTime.Now);
+                    MessageBox.Show($"{greeting}!\nВы вошли под ролью: {role}");
                     LoadPage(role.ToString(), user);
                 }
                 else
@@ -117,18 +123,12 @@ namespace wpfpr3.Pages
                 }
 
             }
-            if (count == 3)
-            {
-                
-                Timetxt.Text = "10";
-                Timetxt.Visibility = Visibility.Visible;
-                
-            }
             else if(click > 1)
             {
                 if(user != null && txtbCaptcha.Text == txtBlockCaptcha.Text)
                 {
-                    MessageBox.Show("Вы вошли под: " + role.ToString());
+                    string greeting = GetGreeting(user, DateTime.Now);
+                    MessageBox.Show($"{greeting}!\nВы вошли под ролью: {role}");
                     LoadPage(role.ToString(), user);
                 }
                 else
@@ -193,7 +193,44 @@ namespace wpfpr3.Pages
             SetControlsEnabled(false);
             timer.Start();
         }
+        private string GetFullName(User user)
+        {
+            if (user == null)
+                return string.Empty;
 
+            string fio = $"{user.surname} {user.firstname}"; 
 
+           
+            return fio;
+        }
+        private string GetGreeting(User user, DateTime now)
+        {
+            var time = now.TimeOfDay;
+            string partOfDay;
+
+           
+            if (time >= new TimeSpan(10, 0, 0) && time <= new TimeSpan(12, 0, 0))
+                partOfDay = "Доброе утро";
+            
+            else if (time > new TimeSpan(12, 0, 0) && time <= new TimeSpan(17, 0, 0))
+                partOfDay = "Добрый день";
+           
+            else if (time > new TimeSpan(17, 0, 0) && time <= new TimeSpan(19, 0, 0))
+                partOfDay = "Добрый вечер";
+            else
+                partOfDay = "Здравствуйте";
+
+            string fullName = GetFullName(user);
+            return $"{partOfDay}, {fullName}";
+        }
+        private bool CanAccessSystem(DateTime now)
+        {
+            var time = now.TimeOfDay;
+
+            var start = new TimeSpan(10, 0, 0); 
+            var end = new TimeSpan(19, 0, 0);   
+
+            return time >= start && time <= end;
+        }
     }
 }

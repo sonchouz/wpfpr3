@@ -24,6 +24,8 @@ namespace wpfpr3.Pages
         public Client(User user, string role)
         {
             InitializeComponent();
+            var candidate = CadrAgencyEntities.GetContext().Candidates.ToList();
+            lviewCand.ItemsSource = candidate;
         }
     }
 }

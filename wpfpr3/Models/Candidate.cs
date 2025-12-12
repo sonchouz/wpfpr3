@@ -14,6 +14,8 @@ namespace wpfpr3.Models
     
     public partial class Candidate
     {
+        internal string ProductImage;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Candidate()
         {

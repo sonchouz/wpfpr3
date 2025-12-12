@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\App.xaml
-4897542419
+5-634019364
 2-1223955081
-30-160618166
+31-2023854179
 19-186382758
-Pages\Employer.xaml;Windows\MainWindow.xaml;Pages\Autho.xaml;Pages\Client.xaml;
+Pages\AddEditCandidatePage.xaml;Pages\Employer.xaml;Windows\MainWindow.xaml;Pages\Autho.xaml;Pages\Client.xaml;
 
-False
+True
 
