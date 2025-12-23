@@ -11,16 +11,24 @@ namespace wpfpr3.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class User
+    using System.ComponentModel.DataAnnotations;
+
+    public  class User
     {
         public int id { get; set; }
+        [Required]
         public int roleID { get; set; }
+        [Required(ErrorMessage = "Firstname is required.")]
         public string firstname { get; set; }
+        [Required(ErrorMessage = "Surname is required.")]
         public string surname { get; set; }
+        [Required(ErrorMessage = "Birthday is required.")]
         public System.DateTime birthday { get; set; }
+        [Required(ErrorMessage = "Phone is required.")]
         public string phone { get; set; }
+        [Required(ErrorMessage = "Email is required.")]
         public string email { get; set; }
+        [Required(ErrorMessage = "Password is required.")]
         public string hashpass { get; set; }
         public Nullable<int> networkID { get; set; }
     

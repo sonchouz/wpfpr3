@@ -11,7 +11,8 @@ namespace wpfpr3.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Candidate
     {
         internal string ProductImage;
@@ -23,9 +24,13 @@ namespace wpfpr3.Models
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "citizenship is required.")]
         public string citizenship { get; set; }
+        [Required(ErrorMessage = "status is required.")]
         public int statusID { get; set; }
+        [Required(ErrorMessage = "City is required.")]
         public string livingcity { get; set; }
+        [Required(ErrorMessage = "Education is required.")]
         public int educationID { get; set; }
         public Nullable<int> langID { get; set; }
         public Nullable<int> levelID { get; set; }

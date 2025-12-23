@@ -17,15 +17,13 @@ using wpfpr3.Models;
 
 namespace wpfpr3.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для Employer.xaml
-    /// </summary>
+   
     public partial class Employer : Page
     {
         private readonly User _currentUser;
         private List<Candidate> _allCandidates = new List<Candidate>();
 
-        // списки для комбобоксов
+       
         public List<string> SortingList { get; } = new List<string>
         {
             "Без сортировки",
@@ -61,7 +59,7 @@ namespace wpfpr3.Pages
 
             var query = _allCandidates.AsQueryable();
 
-            // ПОИСК по ФИО
+           
             var searchText = txtFullName.Text?.Trim();
             if (!string.IsNullOrWhiteSpace(searchText))
             {
@@ -99,22 +97,21 @@ namespace wpfpr3.Pages
 
             }
 
-            // СОРТИРОВКА
+           
             switch (cmbSorting.SelectedIndex)
             {
-                case 1: // Фамилия (А-Я)
+                case 1: 
                     query = query.OrderBy(c => c.User.surname);
                     break;
-                case 2: // Фамилия (Я-А)
+                case 2: 
                     query = query.OrderByDescending(c => c.User.surname);
                     break;
-                case 3: // ДР новые
+                case 3: 
                     query = query.OrderByDescending(c => c.User.birthday);
                     break;
-                case 4: // ДР старые
+                case 4: 
                     query = query.OrderBy(c => c.User.birthday);
-                    break;
-                    // 0 - без сортировки
+                    break; 
             }
 
             var result = query.ToList();

@@ -22,8 +22,6 @@ namespace wpfpr3.Pages
         public AddEditCandidatePage(Candidate currentcand = null)
         {
             InitializeComponent();
-
-            // если currentcand null или id=0 — это добавление
             _isNew = (currentcand == null || currentcand.id <= 0);
 
             if (_isNew)
@@ -33,13 +31,13 @@ namespace wpfpr3.Pages
                     User = new User()
                 };
 
-                // роль 1 = соискатель (по твоей таблице Roles)
+               
                 cand.User.roleID = 1;
                 btnDeleteCand.Visibility = Visibility.Collapsed;
             }
             else
             {
-                // ВАЖНО: грузим из БД через текущий контекст, чтобы EF трекал
+                
                 cand = _context.Candidates
                     .Include(c => c.User)
                     .FirstOrDefault(c => c.id == currentcand.id);
@@ -52,10 +50,10 @@ namespace wpfpr3.Pages
                 }
 
                 btnDeleteCand.Visibility = Visibility.Visible;
-                txtPswd.Text = ""; // пароль меняем только если введёшь новый
+                txtPswd.Text = ""; 
             }
 
-            // Образование
+            
             cmbEdu.ItemsSource = _context.Educations.ToList();
             cmbEdu.DisplayMemberPath = "edulevel";
             cmbEdu.SelectedValuePath = "id";
@@ -68,7 +66,7 @@ namespace wpfpr3.Pages
             UpdateDeleteButtonVisibility();
         }
 
-        // Разрешаем цифры и символы +()- пробел
+  
         private static readonly Regex PhoneAllowed = new Regex(@"^[0-9+\-\(\)\s]+$");
 
         private void Phone_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -83,14 +81,14 @@ namespace wpfpr3.Pages
 
         private void UpdateDeleteButtonVisibility()
         {
-            // Если редактирование — удалить всегда можно
+            
             if (!_isNew)
             {
                 btnDeleteCand.Visibility = Visibility.Visible;
                 return;
             }
 
-            // Нормализация ВНЕ LINQ
+            
             var surname = (cand?.User?.surname ?? "").Trim();
             var firstname = (cand?.User?.firstname ?? "").Trim();
             var phone = (cand?.User?.phone ?? "").Trim();
@@ -104,7 +102,7 @@ namespace wpfpr3.Pages
                 return;
             }
 
-            // Внутри Any() только SQL-переводимое
+            
             bool existsUser = _context.Users.Any(u =>
                 (surname != "" && u.surname == surname) ||
                 (firstname != "" && u.firstname == firstname) ||
@@ -132,7 +130,6 @@ namespace wpfpr3.Pages
             if (dlg.ShowDialog() == true)
             {
                 img.Source = new BitmapImage(new Uri(dlg.FileName));
-                // если добавишь в БД поле под картинку — сюда запишешь путь/имя
             }
         }
 
@@ -197,11 +194,10 @@ namespace wpfpr3.Pages
             cand.User.birthday = dpBirthday.SelectedDate.Value;
             cand.educationID = selectedEdu.id;
 
-            // statusID у тебя NOT NULL. Если UI нет – ставим первый статус из таблицы.
+    
             if (cand.statusID == 0 && _context.Statuses.Any())
                 cand.statusID = _context.Statuses.Select(s => s.id).First();
 
-            // Если пароль ввели – меняем/ставим хэш
             if (!string.IsNullOrWhiteSpace(txtPswd.Text))
                 cand.User.hashpass = HashPassword(txtPswd.Text);
 
@@ -209,14 +205,13 @@ namespace wpfpr3.Pages
             {
                 if (_isNew)
                 {
-                    // 1) создаём User (получаем id)
                     _context.Users.Add(cand.User);
                     _context.SaveChanges();
 
-                    // 2) 1к1: Candidate.id = User.id
+          
                     cand.id = cand.User.id;
 
-                    // 3) создаём Candidate
+                 
                     _context.Candidates.Add(cand);
                 }
 
@@ -233,15 +228,15 @@ namespace wpfpr3.Pages
 
         private void btnDeleteCandidate_Click(object sender, RoutedEventArgs e)
         {
-            // Если редактируем — удаляем текущего
+          
             if (!_isNew && cand?.User != null && cand.User.id > 0)
             {
                 DeleteByUserId(cand.User.id);
                 return;
             }
 
-            // Если добавляем и кнопка появилась из-за совпадений —
-            // удаляем запись из базы, которая совпала (email -> phone -> surname+firstname)
+            
+   
             var email = (cand?.User?.email ?? "").Trim();
             var phone = (cand?.User?.phone ?? "").Trim();
             var surname = (cand?.User?.surname ?? "").Trim();
@@ -302,7 +297,7 @@ namespace wpfpr3.Pages
                     return;
                 }
 
-                // Удаляем User, Candidate удалится каскадно (FK_Candidate_User ON DELETE CASCADE)
+                
                 _context.Users.Remove(userFromDb);
                 _context.SaveChanges();
 
