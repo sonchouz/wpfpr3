@@ -232,5 +232,10 @@ namespace wpfpr3.Pages
 
             return time >= start && time <= end;
         }
+
+        private void forgotButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ForgotPassword());
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Security.Cryptography;
@@ -10,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
 using wpfpr3.Models;
+using wpfpr3.Service;
+using ValidationResult = System.ComponentModel.DataAnnotations.ValidationResult;
 
 namespace wpfpr3.Pages
 {
@@ -18,6 +22,9 @@ namespace wpfpr3.Pages
         private readonly CadrAgencyEntities _context = CadrAgencyEntities.GetContext();
         private readonly bool _isNew;
         private Candidate cand;
+        private User user;
+        private readonly UserValidator _userValidator = new UserValidator();
+        private readonly CandidateValidator _candidateValidator = new CandidateValidator();
 
         public AddEditCandidatePage(Candidate currentcand = null)
         {
@@ -33,6 +40,7 @@ namespace wpfpr3.Pages
 
                
                 cand.User.roleID = 1;
+                cand.statusID = 4;
                 btnDeleteCand.Visibility = Visibility.Collapsed;
             }
             else
@@ -155,74 +163,35 @@ namespace wpfpr3.Pages
                 return;
             }
 
-            var errors = new StringBuilder();
-
-            if (string.IsNullOrWhiteSpace(cand.User.surname))
-                errors.AppendLine("Фамилия обязательна.");
-
-            if (string.IsNullOrWhiteSpace(cand.User.firstname))
-                errors.AppendLine("Имя обязательно.");
-
-            if (string.IsNullOrWhiteSpace(cand.User.phone))
-                errors.AppendLine("Телефон обязателен.");
-
-            if (string.IsNullOrWhiteSpace(cand.User.email))
-                errors.AppendLine("Email обязателен.");
-
-            if (!dpBirthday.SelectedDate.HasValue)
-                errors.AppendLine("Дата рождения обязательна.");
-
-            if (string.IsNullOrWhiteSpace(cand.citizenship))
-                errors.AppendLine("Гражданство обязательно.");
-
-            if (string.IsNullOrWhiteSpace(cand.livingcity))
-                errors.AppendLine("Город проживания обязателен.");
-
-            var selectedEdu = cmbEdu.SelectedItem as Education;
-            if (selectedEdu == null)
-                errors.AppendLine("Выберите образование.");
-
-            if (_isNew && string.IsNullOrWhiteSpace(txtPswd.Text))
-                errors.AppendLine("Пароль обязателен.");
-
-            if (errors.Length > 0)
-            {
-                MessageBox.Show(errors.ToString(), "Ошибка");
+            var errors = ValidateAll();
+            if (!ShowValidationErrors(errors))
                 return;
-            }
-
-            cand.User.birthday = dpBirthday.SelectedDate.Value;
-            cand.educationID = selectedEdu.id;
-
-    
-            if (cand.statusID == 0 && _context.Statuses.Any())
-                cand.statusID = _context.Statuses.Select(s => s.id).First();
-
-            if (!string.IsNullOrWhiteSpace(txtPswd.Text))
-                cand.User.hashpass = HashPassword(txtPswd.Text);
 
             try
             {
                 if (_isNew)
                 {
-                    _context.Users.Add(cand.User);
-                    _context.SaveChanges();
-
-          
-                    cand.id = cand.User.id;
-
-                 
                     _context.Candidates.Add(cand);
                 }
 
                 _context.SaveChanges();
-
-                MessageBox.Show("Информация сохранена.", "Ок");
+                MessageBox.Show("Сохранено.", "Ок");
                 NavigationService.GoBack();
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка сохранения");
+                string msg = ex.Message;
+                if (ex.InnerException != null)
+                {
+                    msg += "\n\nInner exception:\n" + ex.InnerException.Message;
+                }
+                if (ex.InnerException?.InnerException != null)
+                {
+                    msg += "\n\nEven deeper:\n" + ex.InnerException.InnerException.Message;
+                }
+
+                MessageBox.Show(msg, "Полная ошибка сохранения", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -309,5 +278,41 @@ namespace wpfpr3.Pages
                 MessageBox.Show(ex.Message, "Ошибка удаления");
             }
         }
+
+        private List<ValidationResult> ValidateAll()
+        {
+            var errors = new List<ValidationResult>();
+
+            if (cand == null)
+                return errors;
+
+            errors.AddRange(_candidateValidator.Validate(cand));
+
+            if (cand.User != null)
+                errors.AddRange(_userValidator.Validate(cand.User));
+
+            return errors;
+        }
+
+        private bool ShowValidationErrors(List<ValidationResult> errors)
+        {
+            if (errors == null || errors.Count == 0)
+                return true;
+
+            var unique = errors
+                .Select(e => e.ErrorMessage)
+                .Where(m => !string.IsNullOrWhiteSpace(m))
+                .Distinct()
+                .ToList();
+
+            MessageBox.Show(
+                "Ошибки:\n\n• " + string.Join("\n• ", unique),
+                "Валидация",
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
+
+            return false;
+        }
+
     }
 }
