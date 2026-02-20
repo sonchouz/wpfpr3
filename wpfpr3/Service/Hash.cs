@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Org.BouncyCastle.Utilities;
 
 namespace wpfpr3.Service
 {

@@ -107,7 +107,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ForgotPassword.xaml">
+    <Page Include="Pages\PasswordRecovery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,9 +188,10 @@
     <Compile Include="Pages\Employer.xaml.cs">
       <DependentUpon>Employer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ForgotPassword.xaml.cs">
-      <DependentUpon>ForgotPassword.xaml</DependentUpon>
+    <Compile Include="Pages\PasswordRecovery.xaml.cs">
+      <DependentUpon>PasswordRecovery.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service\AppSecurityOptions.cs" />
     <Compile Include="Service\CandidateValidator.cs" />
     <Compile Include="Service\CaptchaGenerator.cs" />
     <Compile Include="Service\Hash.cs" />

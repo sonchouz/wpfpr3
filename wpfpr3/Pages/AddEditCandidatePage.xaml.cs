@@ -141,20 +141,6 @@ namespace wpfpr3.Pages
             }
         }
 
-        private static string HashPassword(string password)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                var bytes = Encoding.UTF8.GetBytes(password ?? "");
-                var hash = sha256.ComputeHash(bytes);
-
-                var sb = new StringBuilder(hash.Length * 2);
-                foreach (var b in hash)
-                    sb.Append(b.ToString("x2"));
-                return sb.ToString();
-            }
-        }
-
         private void btnSaveCandidate_Click(object sender, RoutedEventArgs e)
         {
             if (cand?.User == null)
@@ -166,6 +152,40 @@ namespace wpfpr3.Pages
             var errors = ValidateAll();
             if (!ShowValidationErrors(errors))
                 return;
+            // === Проверка пароля и хэширование ===
+            var rawPassword = (txtPswd.Text ?? "").Trim();
+
+            // Для новой записи пароль обязателен
+            if (_isNew)
+            {
+                if (string.IsNullOrWhiteSpace(rawPassword))
+                {
+                    MessageBox.Show("Введите пароль.", "Валидация", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (rawPassword.Length < 6)
+                {
+                    MessageBox.Show("Пароль должен быть минимум 6 символов.", "Валидация", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                cand.User.hashpass = Hash.HashPassword(rawPassword);
+            }
+            else
+            {
+          
+                if (!string.IsNullOrWhiteSpace(rawPassword))
+                {
+                    if (rawPassword.Length < 6)
+                    {
+                        MessageBox.Show("Пароль должен быть минимум 6 символов.", "Валидация", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+
+                    cand.User.hashpass = Hash.HashPassword(rawPassword);
+                }
+            }
 
             try
             {

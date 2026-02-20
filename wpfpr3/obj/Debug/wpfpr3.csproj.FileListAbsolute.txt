@@ -32,7 +32,6 @@ C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.csproj.AssemblyRefere
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\AddEditCandidatePage.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\AddEditCandidatePage.g.cs
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Employer.g.cs
-C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\ForgotPassword.g.cs
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Windows\MainWindow.g.cs
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Autho.g.cs
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Client.g.cs
@@ -42,7 +41,6 @@ C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3_MarkupCompile.cache
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3_MarkupCompile.lref
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\App.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Employer.baml
-C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\ForgotPassword.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Windows\MainWindow.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Autho.baml
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\Client.baml
@@ -54,3 +52,5 @@ C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.csproj.Up2Date
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.exe
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.pdb
 C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\wpfpr3.exe.config
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\PasswordRecovery.g.cs
+C:\Users\nikon\source\repos\wpfpr3\wpfpr3\obj\Debug\Pages\PasswordRecovery.baml

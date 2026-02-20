@@ -36,7 +36,7 @@ namespace wpfpr3.Models
         public string email { get; set; }
 
         [Required(ErrorMessage = "Password is required.")]
-        [StringLength(30, MinimumLength = 6, ErrorMessage = "Password must be at least 6 characters.")]
+        [StringLength(255, ErrorMessage = "Password is too long.")]
         public string hashpass { get; set; }
 
         public int? networkID { get; set; }
