@@ -25,7 +25,7 @@ namespace wpfpr3.Pages
         private User user;
         private readonly UserValidator _userValidator = new UserValidator();
         private readonly CandidateValidator _candidateValidator = new CandidateValidator();
-
+        //создание кандидата
         public AddEditCandidatePage(Candidate currentcand = null)
         {
             InitializeComponent();
@@ -76,7 +76,7 @@ namespace wpfpr3.Pages
 
   
         private static readonly Regex PhoneAllowed = new Regex(@"^[0-9+\-\(\)\s]+$");
-
+        //форматирование номера телефона
         private void Phone_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !PhoneAllowed.IsMatch(e.Text);
@@ -86,7 +86,7 @@ namespace wpfpr3.Pages
         {
             UpdateDeleteButtonVisibility();
         }
-
+        //изменение видимости состояния кнопки
         private void UpdateDeleteButtonVisibility()
         {
             
@@ -127,7 +127,7 @@ namespace wpfpr3.Pages
                 ? Visibility.Visible
                 : Visibility.Collapsed;
         }
-
+        //выбор изображения
         private void btnEnterImage_Click(object sender, RoutedEventArgs e)
         {
             var dlg = new OpenFileDialog
@@ -140,7 +140,7 @@ namespace wpfpr3.Pages
                 img.Source = new BitmapImage(new Uri(dlg.FileName));
             }
         }
-
+        //сохранение кандидата
         private void btnSaveCandidate_Click(object sender, RoutedEventArgs e)
         {
             if (cand?.User == null)
@@ -214,7 +214,7 @@ namespace wpfpr3.Pages
                 MessageBox.Show(msg, "Полная ошибка сохранения", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
+        //удаление кандидата
         private void btnDeleteCandidate_Click(object sender, RoutedEventArgs e)
         {
           
@@ -298,7 +298,7 @@ namespace wpfpr3.Pages
                 MessageBox.Show(ex.Message, "Ошибка удаления");
             }
         }
-
+        //валидация
         private List<ValidationResult> ValidateAll()
         {
             var errors = new List<ValidationResult>();

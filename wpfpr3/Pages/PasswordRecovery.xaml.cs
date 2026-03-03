@@ -30,7 +30,7 @@ namespace wpfpr3.Pages
             InitializeComponent();
             _userId = userId;
         }
-
+        //изменение пароля
         private void btnSaveNewPassword_Click(object sender, RoutedEventArgs e)
         {
             string newPass = pbNewPassword.Password?.Trim();

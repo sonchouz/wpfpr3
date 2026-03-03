@@ -61,6 +61,7 @@ namespace wpfpr3.Pages
 
         }
 
+        //таймер для отсчета секунд блокировки
         private void Timer_Tick(object sender, EventArgs e)
         {
            seconds--;
@@ -113,7 +114,7 @@ namespace wpfpr3.Pages
             CadrAgencyEntities db = CadrAgencyEntities.GetContext();
             string hashpassword = Hash.HashPassword(password);
             var user = db.Users.Where(x => x.email == login && x.hashpass == hashpassword).FirstOrDefault();
-           
+            //проверка доступа к системе
             if (click == 1)
             {
                 if (user != null)
@@ -176,7 +177,7 @@ namespace wpfpr3.Pages
 
 
         }
-
+        //загрузка страницы в зависимости от роли
         private void LoadPage(string _role, User user)
         {
             click = 0;
@@ -212,7 +213,7 @@ namespace wpfpr3.Pages
                 StartLock();
             }
         }
-
+        //блокировка
         private void StartLock()
         {
             seconds = 10;
@@ -232,6 +233,7 @@ namespace wpfpr3.Pages
            
             return fio;
         }
+        //приветствие в зависимости от времени суток
         private string GetGreeting(User user, DateTime now)
         {
             var time = now.TimeOfDay;
@@ -261,7 +263,7 @@ namespace wpfpr3.Pages
 
             return time >= start && time <= end;
         }
-
+        //SMTP-взаимодействие
         private void forgotButton_Click(object sender, RoutedEventArgs e)
         {
             RecoveryPanel.Visibility = Visibility.Visible;

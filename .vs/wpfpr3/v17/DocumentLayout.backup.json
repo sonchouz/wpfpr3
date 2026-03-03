@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\pages\\autho.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|c:\\users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\service\\appsecurityoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\service\\appsecurityoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{453AD57C-0067-40AE-9BAF-C9921B4400BE}|wpfpr3\\wpfpr3.csproj|solutionrelative:wpfpr3\\service\\appsecurityoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -53,21 +53,12 @@
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppSecurityOptions.cs",
-              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Service\\AppSecurityOptions.cs",
-              "RelativeDocumentMoniker": "wpfpr3\\Service\\AppSecurityOptions.cs",
-              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Service\\AppSecurityOptions.cs",
-              "RelativeToolTip": "wpfpr3\\Service\\AppSecurityOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T05:09:52.923Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
@@ -77,10 +68,22 @@
               "RelativeDocumentMoniker": "wpfpr3\\Pages\\Autho.xaml.cs",
               "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Pages\\Autho.xaml.cs",
               "RelativeToolTip": "wpfpr3\\Pages\\Autho.xaml.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAiwIMAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAcwEEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T05:43:19.574Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppSecurityOptions.cs",
+              "DocumentMoniker": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Service\\AppSecurityOptions.cs",
+              "RelativeDocumentMoniker": "wpfpr3\\Service\\AppSecurityOptions.cs",
+              "ToolTip": "C:\\Users\\nikon\\source\\repos\\wpfpr3\\wpfpr3\\Service\\AppSecurityOptions.cs",
+              "RelativeToolTip": "wpfpr3\\Service\\AppSecurityOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T05:09:52.923Z"
             },
             {
               "$type": "Document",
@@ -140,10 +143,6 @@
               "ViewState": "AgIAABoAAAAAAAAAAAAcwFEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T14:59:53.933Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",

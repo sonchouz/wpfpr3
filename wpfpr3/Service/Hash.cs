@@ -10,13 +10,14 @@ namespace wpfpr3.Service
 {
     public class Hash
     {
+        //хэширование пароля
         public static string HashPassword(string password)
         {
             using (SHA256 shs256Hash = SHA256.Create())
             {
-                byte[] sourceBytePassword = Encoding.UTF8.GetBytes(password);//password принимается методом в виде аргумента
+                byte[] sourceBytePassword = Encoding.UTF8.GetBytes(password);
                 byte[] hash = shs256Hash.ComputeHash(sourceBytePassword);
-                return BitConverter.ToString(hash).Replace("-", String.Empty); //Возвращаем методом строковое значение
+                return BitConverter.ToString(hash).Replace("-", String.Empty); 
             }
         }
 

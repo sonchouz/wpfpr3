@@ -23,7 +23,7 @@ namespace wpfpr3.Pages
         private readonly User _currentUser;
         private List<Candidate> _allCandidates = new List<Candidate>();
 
-       
+       //фильтры и сортировка
         public List<string> SortingList { get; } = new List<string>
         {
             "Без сортировки",
@@ -52,7 +52,7 @@ namespace wpfpr3.Pages
 
 
         }
-
+        //применение фильтров
         private void ApplyFilters()
         {
             if (_allCandidates == null) return;
@@ -119,7 +119,7 @@ namespace wpfpr3.Pages
 
             txtResultCount.Text = result.Count.ToString();
         }
-
+        //загрузка кандидатов
         private void LoadCandidates()
         {
             var ctx = CadrAgencyEntities.GetContext();
@@ -135,13 +135,13 @@ namespace wpfpr3.Pages
             NavigationService.Navigate(new
            AddEditCandidatePage());
         }
-
+        //добавление кандидата
         private void btnAddEmp_Click(object sender, RoutedEventArgs e)
         {
 
             NavigationService.Navigate(new AddEditCandidatePage());
         }
-
+        //изменение состояния
         private void cmbSorting_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ApplyFilters();

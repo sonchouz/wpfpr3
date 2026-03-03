@@ -10,6 +10,7 @@ namespace wpfpr3.Service
 {
     public class UserValidator
     {
+        //валидация юзера
         public List<ValidationResult> Validate(User user)
         {
             var context = new ValidationContext(user);
