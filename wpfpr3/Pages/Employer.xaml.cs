@@ -171,7 +171,31 @@ namespace wpfpr3.Pages
         {
             NavigationService.Navigate(new AddEditCandidatePage());
         }
-       
-    }
+
+        private void PrintListButton_Click(object sender, RoutedEventArgs e)
+        {
+            FlowDocument doc = fdr.Document;
+            if(doc == null)
+            {
+                MessageBox.Show("Документ не найден");
+                return;
+            }
+
+            PrintDialog pd  = new PrintDialog();
+             if(pd.ShowDialog() == true)
+            {
+                FlowDocument printDoc = fdr.Document;
+
+                printDoc.PageHeight = pd.PrintableAreaHeight;
+                printDoc.PageWidth = pd.PrintableAreaWidth;
+                printDoc.PagePadding = new Thickness(40);
+                printDoc.ColumnGap = 0;
+                printDoc.ColumnWidth = pd.PrintableAreaWidth;
+
+                IDocumentPaginatorSource idpSource = doc;
+                pd.PrintDocument(idpSource.DocumentPaginator, "Список сотрудников");
+            }
+        }
+    } 
     
 }
